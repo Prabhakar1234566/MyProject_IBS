@@ -1,0 +1,85 @@
+#%RAML 1.0
+title: Ibs-Library-Management-Sapi
+version: 1.0
+baseUri: www.google.com
+mediaType: 
+- application/json
+protocols:
+  - HTTP
+traits:
+  Headerinfo: !include Traits/trait-Header.raml
+  queryp: !include /exchange_modules/4c4bc162-8c3e-4703-93ab-9e7efeb51a59/queryparams/1.0.0/queryparams.raml
+types:
+  404-error: !include DataType/dataType-Property.raml
+  getLibraries: !include DataType/get-librarys-dataType.raml
+  LibraryId: !include DataType/LibraryId-dataType.raml
+  createbookreq: !include DataType/Create-Book-Reqest-DataType.raml
+  201-res: !include DataType/201-res.raml
+
+ 
+/Libraries:
+  get :
+    is:
+      - Headerinfo
+       
+    responses:
+      200:
+        body:
+          application/json:
+            type: getLibraries
+            
+      404:
+        body:
+          application/json:
+            type: 404-error
+  /{LibraryId}:
+    get:
+      is:
+        - Headerinfo
+      responses:
+        200:
+          body:
+            application/json:
+              type: LibraryId
+        400:
+          body:
+            application/json:
+              type: 404-error
+/books:
+  post:
+   description: this resources add to New book to the database 
+   is:
+    - Headerinfo
+   body:
+     application/json:
+      description: this is request body secotion to create new one book 
+      type: createbookreq
+   responses:
+     201:
+      body:
+        application/json:
+          type: 201-res
+     404:
+      body:
+        application/json:
+          type: 404-error
+  get:
+    description: get books based on the query parametar
+    is:
+      - Headerinfo
+      - queryp
+       
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include Examples/JSON.json
+                
+      404:
+        body:
+          application/json:
+            type: 404-error
+              
+              
+        
+

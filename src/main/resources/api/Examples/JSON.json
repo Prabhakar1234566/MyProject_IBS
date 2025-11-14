@@ -1,0 +1,21 @@
+{
+    "LibraryCode": "IBS111",
+    "books": [
+      {
+        "bookCode": "BK666",
+        "title": "Mulesoft Mastery",
+        "author": "Klark",
+        "bookCategory": "Tech",
+        "Rating":4
+      },
+      {
+        "bookCode": "BK555",
+        "title": "SAP MI",
+        "author": "Klark Technologies",
+        "bookCategory": "Technology",
+        "readTimeInHrs": 65,
+        "rentalPrice": "200Rs",
+        "rating": 4
+      }
+    ]
+  }
