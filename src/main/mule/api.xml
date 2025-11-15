@@ -167,7 +167,7 @@ output application/json
         </ee:transform>
     </flow>
     <flow name="get:\Libraries\(LibraryId):ibs-library-management-sapi-config">
-        <logger level="INFO" doc:name="Logger" doc:id="7d7edbbc-07df-4a95-9b42-e4f7728168f8" message="#####Before Library Id"/>
+        <logger level="INFO" doc:name="Logger" doc:id="7d7edbbc-07df-4a95-9b42-e4f7728168f8" message="#####Before Library Id gfytfytftftftftfgftg"/>
 		<ee:transform doc:name="Transform Message">
             <ee:variables>
                 <ee:set-variable variableName="LibraryId"><![CDATA[%dw 2.0
@@ -175,7 +175,7 @@ output application/json
 ---
 {
   LibrarycodeId:"IBS123",
-  Address: "Hyderabad",
+  Address: "Hyderabadd",
   PhoneNumber: 9945194646,
   Email: "Klark@gmail.com"
 }as Object {encoding: "UTF-8", mediaType: "application/json"}

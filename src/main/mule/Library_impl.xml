@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
+	<db:config name="Database_Config" doc:name="Database Config" doc:id="c8d5130b-5e71-4f5c-9ef7-2f14ca18e877" >
+		<db:my-sql-connection host="bsstdw1cz3g5ptpajna9-mysql.services.clever-cloud.com" port="3306" user="uhzhkqeenuyurumf" password="8FHcGywzQFwha9iI0QoS" database="bsstdw1cz3g5ptpajna9" />
+	</db:config>
+	<flow name="Library_implFlow" doc:id="2593d46f-390d-4c7f-af88-94569b866e00" >
+		<db:select doc:name="Select" doc:id="26d66bfe-9320-484d-ad75-303ad1f735ee" config-ref="Database_Config">
+			<db:sql ><![CDATA[select * from bsstdw1cz3g5ptpajna9]]></db:sql>
+		</db:select>
+	</flow>
+</mule>
