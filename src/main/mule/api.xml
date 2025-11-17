@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd ">
+<<<<<<< HEAD
    
     
     
+=======
+  
+>>>>>>> b63457f70e3f02395f7e1638d815eeb74a24e207
     <flow name="ibs-library-management-sapi-main">
         <http:listener config-ref="ibs-library-management-sapi-httpListenerConfig" path="${HTTP.Path}">
             <http:response statusCode="#[vars.httpStatus default 200]">
@@ -96,13 +100,13 @@ output application/json
         </error-handler>
     </flow>
     <flow name="ibs-library-management-sapi-console">
-        <http:listener config-ref="ibs-library-management-sapi-httpListenerConfig" path="/console/*">
+        <http:listener config-ref="ibs-library-management-sapi-httpListenerConfig" path="${http.Path}">
             <http:response statusCode="#[vars.httpStatus default 200]">
-                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
             </http:response>
             <http:error-response statusCode="#[vars.httpStatus default 500]">
-                <http:body>#[payload]</http:body>
-                <http:headers>#[vars.outboundHeaders default {}]</http:headers>
+                <http:body><![CDATA[#[payload]]]></http:body>
+                <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
             </http:error-response>
         </http:listener>
         <apikit:console config-ref="ibs-library-management-sapi-config" />
@@ -166,7 +170,7 @@ output application/json
         </ee:transform>
     </flow>
     <flow name="get:\Libraries\(LibraryId):ibs-library-management-sapi-config">
-        <logger level="INFO" doc:name="Logger" doc:id="7d7edbbc-07df-4a95-9b42-e4f7728168f8" message="#####Before Library Id"/>
+        <logger level="INFO" doc:name="Logger" doc:id="7d7edbbc-07df-4a95-9b42-e4f7728168f8" message="#####Before Library Id gfytfytftftftftfgftg"/>
 		<ee:transform doc:name="Transform Message">
             <ee:variables>
                 <ee:set-variable variableName="LibraryId"><![CDATA[%dw 2.0
@@ -174,7 +178,7 @@ output application/json
 ---
 {
   LibrarycodeId:"IBS123",
-  Address: "Hyderabad",
+  Address: "Hyderabadd",
   PhoneNumber: 9945194646,
   Email: "Klark@gmail.com"
 }as Object {encoding: "UTF-8", mediaType: "application/json"}
