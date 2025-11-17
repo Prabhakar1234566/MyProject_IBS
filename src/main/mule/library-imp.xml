@@ -4,12 +4,18 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
-	<db:config name="Database_Config" doc:name="Database Config" doc:id="fe4d9c8e-8ab0-411e-8f9f-3d20f21c8c85" >
-		<db:my-sql-connection />
-	</db:config>
-	<flow name="library-impFlow" doc:id="8859d9f3-00ea-431d-819f-5cf516a25e9b" >
-		<db:select doc:name="Select" doc:id="ba7674e7-ceae-4fd7-b481-685bfeaec247" config-ref="Database_Config">
-			<db:sql ><![CDATA[select  * from LibraryDetails]]></db:sql>
+	
+	
+	
+	<flow name="library-impFlow" doc:id="4a999884-9065-42e2-8327-00cba43090d4" >
+		<db:select doc:name="Select" doc:id="21a8df74-7f68-45a7-98a7-e31b1dcbc250" config-ref="Database_Config">
+			<db:sql ><![CDATA[select * from LibraryDetails]]></db:sql>
 		</db:select>
 	</flow>
-</mule>
+
+	
+	
+	
+	
+	
+	</mule>
