@@ -10,6 +10,7 @@
     <flow name="ibs-library-management-sapi-main">
         <http:listener config-ref="ibs-library-management-sapi-httpListenerConfig" path="${HTTP.Path}">
             <http:response statusCode="#[vars.httpStatus default 200]">
+				 <http:response statusCode="#[vars.httpStatus default 200]">
                 <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
             </http:response>
             <http:error-response statusCode="#[vars.httpStatus default 500]">
